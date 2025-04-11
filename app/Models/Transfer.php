@@ -14,4 +14,22 @@ class Transfer extends Model
         'transfer_date',
         'status',
     ];
+    protected $casts = [
+        'transfer_date' => 'datetime',
+    ];
+
+    public function items()
+    {
+        return $this->hasMany(TransferItem::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'brunch_id');
+    }
+
+    public function transferItems()
+    {
+        return $this->hasMany(TransferItem::class, 'transfer_id', 'id');
+    }
 }

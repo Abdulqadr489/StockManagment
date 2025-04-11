@@ -27,5 +27,19 @@ class Item extends Model
         return $this->hasMany(Branch::class);
     }
 
+    public function transfer()
+    {
+        return $this->hasMany(Transfer::class);
+    }
+
+    public function branchStock()
+    {
+        return $this->hasMany(BranchStock::class);
+    }
+
+    
+
+
+
 
 }

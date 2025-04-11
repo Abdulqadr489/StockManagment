@@ -23,17 +23,25 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:api')->group(function (){
     Route::apiResource('category',ItemCategoryController::class);
+
     Route::apiResource('branches',BranchController::class);
+
+    Route::get('/branches/{id}/sales', [BranchController::class, 'getSpecificBranchSales']);
+
+    Route::get('/sales/all/brunches', [BranchController::class, 'getAllBranchSales']);
+
     Route::apiResource('items',ItemController::class);
 
     Route::apiResource('warehouse-stock', WarehouseStockController::class);
 
     Route::apiResource('branch-stock', BranchStockController::class);
+
     Route::apiResource('customers',CustomerController::class);
+
     Route::apiResource('sales', SaleController::class);
+
     Route::apiResource('transfers', TransferController::class);
 
-    Route::get('/branches/all/sales', [BranchController::class, 'getAllBranchSales']);
-    Route::get('/branches/{id}/sales', [BranchController::class, 'getSpecificBranchSales']);
+
 
 });
