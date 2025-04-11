@@ -26,10 +26,13 @@ php artisan migrate --seed
 
 ## Features
 
-- Create and manage branches for stores
-- Track inventory (stock) per branch
-- Handle item categories and items
-- Record sales (with multiple items per sale)
-- Manage customers (optional)
+
+- register / login 
+- Category management
+- Item management
+- Brunch management
+- Customers management
+- Record sales (with multiple items per sale and per brunch)
+- Record transfer from wearhouse to stock (with multiple items)
 - Retrieve sales per branch or all branches
 - API secured with Laravel Passport
